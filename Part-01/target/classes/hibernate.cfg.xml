@@ -7,7 +7,7 @@
     <!--    Driver class-->
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <!--    connection URL-->
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ijse</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
     <!--    database user name-->
     <property name="hibernate.connection.username">root</property>
     <!--    database password-->
