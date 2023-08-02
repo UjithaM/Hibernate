@@ -1,10 +1,10 @@
-package software.ujithamigara.util;
+package software.ujithamigara.OneToOne.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import software.ujithamigara.entity.Book;
-import software.ujithamigara.entity.Author;
+import software.ujithamigara.OneToOne.entity.Book;
+import software.ujithamigara.OneToOne.entity.Author;
 
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;

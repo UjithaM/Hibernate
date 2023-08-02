@@ -1,8 +1,8 @@
 package software.ujithamigara;
 
-import software.ujithamigara.dao.BookDao;
-import software.ujithamigara.dao.impl.BookDaoImpl;
-import software.ujithamigara.entity.Book;
+import software.ujithamigara.OneToOne.dao.BookDao;
+import software.ujithamigara.OneToOne.dao.impl.BookDaoImpl;
+import software.ujithamigara.OneToOne.entity.Book;
 
 import java.util.Scanner;
 

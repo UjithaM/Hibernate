@@ -1,10 +1,10 @@
-package software.ujithamigara.dao.impl;
+package software.ujithamigara.OneToMany.dao.impl;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import software.ujithamigara.dao.BookDao;
-import software.ujithamigara.entity.Book;
-import software.ujithamigara.util.FactoryConfiguration;
+import software.ujithamigara.OneToMany.dao.BookDao;
+import software.ujithamigara.OneToMany.entity.Book;
+import software.ujithamigara.OneToMany.util.FactoryConfiguration;
 
 public class BookDaoImpl implements BookDao {
 

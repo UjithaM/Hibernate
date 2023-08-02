@@ -1,7 +1,7 @@
-package software.ujithamigara.dao.impl;
+package software.ujithamigara.ManyToMany.dao.impl;
 
-import software.ujithamigara.dao.AuthorDao;
-import software.ujithamigara.entity.Author;
+import software.ujithamigara.ManyToMany.dao.AuthorDao;
+import software.ujithamigara.ManyToMany.entity.Author;
 
 public class AuthorDaoImpl implements AuthorDao {
     @Override

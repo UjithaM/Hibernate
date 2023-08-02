@@ -1,4 +1,4 @@
-package software.ujithamigara.entity;
+package software.ujithamigara.OneToMany.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

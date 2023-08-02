@@ -1,21 +1,20 @@
-package software.ujithamigara.dao.impl;
+package software.ujithamigara.OneToOne.dao.impl;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import software.ujithamigara.dao.BookDao;
-import software.ujithamigara.entity.Book;
-import software.ujithamigara.util.FactoryConfiguration;
+import software.ujithamigara.OneToOne.dao.AuthorDao;
+import software.ujithamigara.OneToOne.entity.Author;
+import software.ujithamigara.OneToOne.util.FactoryConfiguration;
 
-public class BookDaoImpl implements BookDao {
-
+public class AuthorDaoImpl implements AuthorDao {
     @Override
-    public boolean saveBook(Book book) {
+    public boolean saveAuthor(Author author) {
         try {
             Session session = FactoryConfiguration.getInstance().getSession();
             Transaction transaction = session.beginTransaction();
 
             // Save the book to the database
-            session.save(book);
+            session.persist(author);
 
             transaction.commit();
             session.close();
@@ -28,18 +27,18 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public Book searchBook(int id) {
+    public Author searchBook(int id) {
         try {
             Session session = FactoryConfiguration.getInstance().getSession();
             Transaction transaction = session.beginTransaction();
 
             // Search for the book with the given ID in the database
-            Book book = session.get(Book.class, id);
+            Author author = session.get(Author.class, id);
 
             transaction.commit();
             session.close();
 
-            return book ;
+            return author ;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -47,13 +46,13 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public boolean updateBook(Book book) {
+    public boolean updateBook(Author author) {
         try {
             Session session = FactoryConfiguration.getInstance().getSession();
             Transaction transaction = session.beginTransaction();
 
             // Update the book in the database
-            session.merge(book);
+            session.merge(author);
 
             transaction.commit();
             session.close();
@@ -66,13 +65,13 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public boolean deleteBook(Book book) {
+    public boolean deleteBook(Author author) {
         try {
             Session session = FactoryConfiguration.getInstance().getSession();
             Transaction transaction = session.beginTransaction();
 
             // Delete the book from the database
-            session.remove(book);
+            session.remove(author);
 
             transaction.commit();
             session.close();

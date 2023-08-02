@@ -1,4 +1,4 @@
-package software.ujithamigara;
+package software.ujithamigara.ManyToMany;
 
 public class Main {
     public static void main(String[] args) {

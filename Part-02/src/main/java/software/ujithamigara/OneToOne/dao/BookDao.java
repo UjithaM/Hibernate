@@ -1,6 +1,6 @@
-package software.ujithamigara.dao;
+package software.ujithamigara.OneToOne.dao;
 
-import software.ujithamigara.entity.Book;
+import software.ujithamigara.OneToOne.entity.Book;
 
 public interface BookDao {
     public boolean saveBook(Book book);

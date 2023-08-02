@@ -1,6 +1,6 @@
-package software.ujithamigara.dao;
+package software.ujithamigara.OneToMany.dao;
 
-import software.ujithamigara.entity.Author;
+import software.ujithamigara.OneToMany.entity.Author;
 
 public interface AuthorDao {
     public boolean saveAuthor(Author author);
