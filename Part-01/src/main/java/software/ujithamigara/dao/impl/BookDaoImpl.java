@@ -28,7 +28,7 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public boolean searchBook(int id) {
+    public Book searchBook(int id) {
         try {
             Session session = FactoryConfiguration.getInstance().getSession();
             Transaction transaction = session.beginTransaction();
@@ -39,10 +39,10 @@ public class BookDaoImpl implements BookDao {
             transaction.commit();
             session.close();
 
-            return book != null;
+            return book ;
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return null;
         }
     }
 
@@ -53,7 +53,7 @@ public class BookDaoImpl implements BookDao {
             Transaction transaction = session.beginTransaction();
 
             // Update the book in the database
-            session.update(book);
+            session.merge(book);
 
             transaction.commit();
             session.close();
@@ -72,7 +72,7 @@ public class BookDaoImpl implements BookDao {
             Transaction transaction = session.beginTransaction();
 
             // Delete the book from the database
-            session.delete(book);
+            session.remove(book);
 
             transaction.commit();
             session.close();
