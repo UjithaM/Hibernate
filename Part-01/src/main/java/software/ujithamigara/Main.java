@@ -1,11 +1,8 @@
 package software.ujithamigara;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import software.ujithamigara.dao.BookDao;
 import software.ujithamigara.dao.impl.BookDaoImpl;
 import software.ujithamigara.entity.Book;
-import software.ujithamigara.util.FactoryConfiguration;
 
 import java.util.Scanner;
 
@@ -30,15 +27,34 @@ public class Main {
                 System.out.print("input Book ISBN : ");
                 book.setISBN(scanner.nextLine());
 
-                //call the dao and save the Book
-                bookDao.saveBook(book);
+                if(bookDao.saveBook(book)){
+                    System.out.println("Book saved successfully :)");
+                }else {
+                    System.out.println("Book not saved something went wrong :(");
+                }
 
             } else if (userInput == 2) {
+                System.out.print("input Book Id ; ");
+                Book book = bookDao.searchBook(scanner.nextInt());
+                System.out.println("Book Id : "+book.getId()+"\nBook Title : "+book.getTitle()+"\nBook ISBN : " +book.getISBN());
 
             } else if (userInput == 3) {
+                System.out.print("Input Book Id that want to update : ");
+                Book book = new Book();
+                book.setId(scanner.nextInt());
+                scanner.nextLine();
+                System.out.print("input new ISBN : ");
+                book.setISBN(scanner.nextLine());
+                System.out.print("input new Title : ");
+                book.setTitle(scanner.nextLine());
+
+                bookDao.updateBook(book);
 
             } else if (userInput == 4) {
-
+                System.out.print("Input Book Id that want to delete : ");
+                scanner.nextLine();
+                Book book = bookDao.searchBook(Integer.parseInt(scanner.nextLine()));
+                bookDao.deleteBook(book);
             }
 
         }while (userInput != 9);
