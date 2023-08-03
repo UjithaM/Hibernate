@@ -4,9 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 public class Author {
     @Id
@@ -14,10 +11,18 @@ public class Author {
     private  String name;
 
     @OneToOne
-    private Author author;
+    private Book book;
 
     public String getId() {
         return id;
+    }
+
+    public Book getAuthor() {
+        return book;
+    }
+
+    public void setAuthor(Book book) {
+        this.book = book;
     }
 
     public void setId(String id) {
@@ -40,9 +45,10 @@ public class Author {
         this.birthDay = birthDay;
     }
 
-    public Author(String id, String name, String birthDay) {
+    public Author(String id, String name, Book book, String birthDay) {
         this.id = id;
         this.name = name;
+        this.book = book;
         this.birthDay = birthDay;
     }
 
